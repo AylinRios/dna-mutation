@@ -8,3 +8,6 @@ spring:
     url: jdbc:mysql://${DB_HOST:aylinrios-dev.c3rqox8okkey.us-east-2.rds.amazonaws.com}:${DB_PORT:3306}/${DB_SCHEMA:adn_mutation}?${SQL_QUERY_STRINGS:useUnicode=true&characterEncoding=utf8&useSSL=false&allowPublicKeyRetrieval=true}
     username: ${DB_USERNAME:admin}
     password: ${DB_PASSWORD:admin1234}
+
+  jpa:
+    show-sql: true
