@@ -42,7 +42,7 @@ public class Dna implements Serializable {
     private DnaBuild dna;
 
     @Column
-    private boolean hasMuation;
+    private boolean hasMutation;
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date createdAt = new Date();
@@ -51,9 +51,10 @@ public class Dna implements Serializable {
     @JoinColumn(name = "human_id")
     private Human human;
 
-    public Dna(final DnaBuild dna, final Human human){
-        this.dna= dna;
-        this.human= human;
+    public Dna(final DnaBuild dna, final Human human, final boolean hasMutation){
+        this.dna = dna;
+        this.human = human;
+        this.hasMutation = hasMutation;
     }
 
 }

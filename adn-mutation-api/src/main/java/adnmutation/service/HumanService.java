@@ -27,8 +27,7 @@ public class HumanService {
 
        final List<List<String>> dna= dnaGenerator(num);
 
-
-        final DnaBuild dnaBuild= new DnaBuild();
+       final DnaBuild dnaBuild= new DnaBuild();
         dnaBuild.setDna(dna);
 
         dnaService.create(dnaBuild, human);
@@ -37,6 +36,7 @@ public class HumanService {
         log.info("DNA: {}", dna);
 
     }
+
 
     public static int RandomNumber(int min, int max) {
         return ThreadLocalRandom.current().nextInt(min, max + 1);
