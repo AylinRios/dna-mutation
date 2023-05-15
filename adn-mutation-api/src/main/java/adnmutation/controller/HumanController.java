@@ -1,13 +1,17 @@
 package adnmutation.controller;
 
+import adnmutation.form.DNADataForm;
+import adnmutation.service.DnaService;
 import adnmutation.service.HumanService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Slf4j
 @RestController
@@ -16,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HumanController {
 
     private final HumanService humanService;
+    private final DnaService dnaService;
     @PostMapping("/{name}")
     public ResponseEntity<Void> create(@PathVariable String name){
 
@@ -25,10 +30,22 @@ public class HumanController {
     }
 
     @PostMapping("/mutation")
-    public String hasMutation(){
+    public ResponseEntity<Void> hasMutation(@RequestBody DNADataForm dnaData) {
+        List<List<String>> dnaList = new ArrayList<>();
 
+        dnaData.getDna().forEach(item -> {
 
-        return "";
+            List<String> adn = new ArrayList<>();
+
+            for(int i = 0; i < item.length(); i++) {
+                char chasrs = item.charAt(i);
+                adn.add(String.valueOf(chasrs));
+            }
+            dnaList.add(adn);
+        });
+
+        humanService.validateDNA(dnaList);
+        return ResponseEntity.status(HttpStatus.OK).build();
     }
 
 }

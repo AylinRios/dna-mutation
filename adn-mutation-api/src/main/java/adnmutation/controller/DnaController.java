@@ -25,7 +25,7 @@ public class DnaController {
         return ResponseEntity.ok(dnaService.getDnaStats());
     }
 
-    @GetMapping("/accounting/{hasMutation}")
+    @GetMapping("/records-mutated-onmutated/{hasMutation}")
     public ResponseEntity<List<MutationDTO>> mutationAccounting(@PathVariable boolean hasMutation){
         return ResponseEntity.ok(dnaService.mutationAccounting(hasMutation));
     }
