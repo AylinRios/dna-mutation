@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/adn-mutation-web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

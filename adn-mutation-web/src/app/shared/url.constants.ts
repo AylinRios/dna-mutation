@@ -1,6 +1,6 @@
-import { environment } from '../../environments/environment'
+import { environment } from '../../environments/environment.prod'
 
-const apiBaseUrl = `${environment.apiBaseUrl}`
+const apiBaseUrl = `${environment.firebaseConfig.apiBaseUrl}`
 
 // LOGIN
 export const LOGIN_URL = `${apiBaseUrl}/user/login`
