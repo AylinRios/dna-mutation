@@ -25,10 +25,16 @@ Default locale: en_US, platform encoding: UTF-8
 OS name: "linux", version: "5.10.157-139.675.amzn2.x86_64", arch: "amd64", family: "unix"
 ```
 
-Clonar el repositorio y moverse a la ruta `adn-mutation-api`, dentro de ella ejecutar el siguiente comando:
+Clonar el repositorio y moverse a la ruta `adn-mutation-api`, dentro de ella ejecutar el siguiente comando para instalar las dependencias de nuestro proyecto:
 ```
 mvn clean install
 ```
+
+Despues de eso podremos poner a ejecutar nuestro api con el siguiente comando:
+```
+mvn spring-boot:run
+```
+
 
 Si todo sale bien, ingresar a la siguente liga:
 - [Swagger UI Localhost](http://localhost:8080/swagger-ui/index.html)
