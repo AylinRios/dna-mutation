@@ -1,9 +1,9 @@
-# dna-mutation
+# BWL DNA Mutation Test
 
 Aplicacion Web enfocada en la gestion de ADN para revisar si ciertos Humanos cuentan con mutaciones geneticas.
 
-[Backend Folder](./adn-mutation-api/)
-[Frontend Folder](./adn-mutation-web/)
+- [Backend Folder](./adn-mutation-api/)
+- [Frontend Folder](./adn-mutation-web/)
 
 ## Tecnologias
 
