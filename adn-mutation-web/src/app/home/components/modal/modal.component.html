@@ -1,0 +1,14 @@
+<form [formGroup]="form" class="pt-35">
+    <div mat-dialog-content class="modal-content">
+        <div class="circle"></div>
+        <mat-form-field class="example-full-width" style="width: 500px;">
+            <input matInput placeholder="Nombre de humano" formControlName="name">
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions class="modal-action">
+        <button mat-raised-button mat-dialog-close cdkFocusInitial style="background-color: #F6A72D;"
+            (click)="createHuman()">
+            <b>Crear humano</b>
+        </button>
+    </div>
+</form>

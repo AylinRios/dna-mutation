@@ -1,0 +1,35 @@
+<div class="header">
+    <div style="display: flex; align-items: baseline;">
+        <div>
+            <h1>ADN detector:&nbsp;&nbsp;</h1>
+        </div>
+        <div *ngIf="isEnabled">
+            <h2> CM: {{dataStats.count_mutations}} SM: {{dataStats.count_not_mutation}}</h2>
+        </div>
+    </div>
+    <div style="display: flex; width: 100%; justify-content: space-evenly; flex-wrap: wrap;">
+        <div class="div-button">
+            <button mat-raised-button (click)="openDialog()" class="red-button">Nuevo humano</button>
+        </div>
+        <div class="div-button">
+            <button mat-raised-button class="login-button" (click)="displayStats()" class="purple-button">
+                Analizar humanos
+            </button>
+        </div>
+        <div class="div-button">
+            <button mat-raised-button class="login-button" (click)="getRecordsMutation(true)" class="purple-button">
+                Con mutacion
+            </button>
+        </div>
+        <div class="div-button">
+            <button mat-raised-button class="login-button" (click)="getRecordsMutation(false)" class="purple-button">
+                Sin mutacion
+            </button>
+        </div>
+    </div>
+</div>
+<div class="cards">
+    <div *ngFor="let a of data">
+        <app-card [human]=a></app-card>
+    </div>
+</div>

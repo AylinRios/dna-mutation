@@ -1,0 +1,88 @@
+.first-column {
+    background: #070E35;
+    height: 100vh;
+    text-align: center;
+}
+
+.golden-line {
+    background: #CEA470;
+    height: 100vh;
+}
+
+.second-column {
+    background: #FFFFFF;
+    height: 100vh;
+}
+
+.img-width {
+    max-width: 45%;
+}
+
+.title-dna {
+    color: #CEA470;
+}
+
+.login-card {
+    width: 600px;
+    height: 400px;
+    text-align: center;
+    margin-right: 10%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.version {
+    color: #FFFFFF;
+}
+
+.card-title {
+    padding-top: 40px;
+}
+
+.password-icon {
+    border: none;
+    background: transparent;
+    font-size: 15px;
+    padding-right: 10px;
+}
+
+.div-button {
+    padding-top: 50px;
+}
+
+.login-button {
+    width: 175px;
+    height: 50px;
+    color: black;
+    background-color: #F6A72D;
+    border-radius: 10px;
+    position: absolute;
+    bottom: -22px;
+    left: 222px;
+}
+
+.form-field {
+    width: 75%;
+}
+
+.pt-35 {
+    padding-top: 35px;
+}
+
+.login-container {
+    background-color: #004EE8;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    flex-direction: column;
+}

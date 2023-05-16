@@ -1,0 +1,34 @@
+<div class="login-container">
+
+  <mat-card class="login-card">
+    <mat-card-content>
+      <form [formGroup]="loginForm" class="pt-35">
+
+        <mat-form-field class="form-field">
+          <mat-label>Usuario</mat-label>
+          <input type="text" matInput formControlName="username" />
+          <mat-error>
+            {{ validateUserName() }}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-field">
+          <mat-label>Contraseña</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" />
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide" class="password-icon" type="button">
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <div class="div-button">
+          <button mat-raised-button class="login-button" [disabled]="validateToDisabledButton()"
+            (click)="userAuthentication()">
+            ,<b> Ingresar</b>
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+</div>

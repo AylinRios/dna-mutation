@@ -1,0 +1,14 @@
+<mat-card class="example-card">
+    <mat-card-content>
+        <div class="card-info">
+            <div class="circle" [ngStyle]="{'background-color': human.hasMutation ? 'red' : 'green'}"></div>
+            <div>
+                <b>{{human.name}}</b>
+                <p>Creado en: {{human.createdAt | date:'shortDate'}} </p>
+            </div>
+        </div>
+        <div>
+            <b [ngStyle]="{'color': human.hasMutation ? 'red' : 'green'}">{{human.hasMutation ? 'CON MUTACION' : 'SIN MUTACION'}}</b>
+        </div>
+    </mat-card-content>
+</mat-card>

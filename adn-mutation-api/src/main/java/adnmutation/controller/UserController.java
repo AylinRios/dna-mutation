@@ -30,7 +30,7 @@ public class UserController {
     public ResponseEntity<SessionInformationDTO> login(@Valid @RequestBody AuthUserForm authUser, BindingResult bindingResult){
 
         if(bindingResult.hasErrors())
-           return new ResponseEntity(new Message("Check entered fields"), HttpStatus.BAD_REQUEST);
+           return new ResponseEntity(HttpStatus.BAD_REQUEST);
 
         if(userService.existsByUserName(authUser.getUsername())) {
 
@@ -40,10 +40,10 @@ public class UserController {
 
             SessionInformationDTO sessionInformationDTO = new SessionInformationDTO( authUser.getUsername(), user.get().getId());
 
-            return ResponseEntity.ok(sessionInformationDTO);
+            return new ResponseEntity(sessionInformationDTO, HttpStatus.OK);
         }
 
-        return new ResponseEntity(new  Message("User does not exist"), HttpStatus.BAD_REQUEST);
+        return new ResponseEntity(HttpStatus.BAD_REQUEST);
     }
 
 }
